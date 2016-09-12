@@ -1,0 +1,33 @@
+
+    - name: Get nodejs setup script
+      get_url: url=https://deb.nodesource.com/setup_4.x dest=~/nodejs-installer
+      become: yes
+      tags:
+      - react
+      - development
+
+    - name: Setup nodejs
+      command: /bin/bash ~/nodejs-installer
+      become: yes
+      tags:
+      - react
+      - development
+
+    - name: Install nodejs
+      apt: pkg=nodejs
+      become: yes
+      tags:
+      - react
+      - development
+
+    - name: Install vim-javascript
+      git: repo=https://github.com/pangloss/vim-javascript.git dest=~/.vim/bundle/vim-javascript
+
+    - name: Install global NPM packages
+      npm: name={{ item.name }} version={{ item.version }} global=yes
+      become: yes
+      with_items:
+      - {name: create-react-app, version: 0.3.0}
+      tags:
+      - react
+      - development
