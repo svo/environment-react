@@ -4,4 +4,4 @@
   roles:
     - environment-core
     - environment-nodejs
-    - .
+    - ../environment-react
