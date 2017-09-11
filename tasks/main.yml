@@ -1,31 +1,4 @@
 
-    - name: Get nodejs setup script
-      get_url: url=https://deb.nodesource.com/setup_4.x dest=~/nodejs-installer
-      become: yes
-      tags:
-      - react
-      - development
-
-    - name: Setup nodejs
-      command: /bin/bash ~/nodejs-installer
-      become: yes
-      tags:
-      - react
-      - development
-
-    - name: Install nodejs
-      apt: pkg=nodejs
-      become: yes
-      tags:
-      - react
-      - development
-
-    - name: Install vim-javascript
-      git: repo=https://github.com/pangloss/vim-javascript.git dest=~/.vim/bundle/vim-javascript
-      tags:
-      - react
-      - development
-
     - name: Install vim-jsx
       git: repo=https://github.com/mxw/vim-jsx.git dest=~/.vim/bundle/vim-jsx
       tags:

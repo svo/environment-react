@@ -2,5 +2,6 @@
 - hosts: all
 
   roles:
-     - environment-core
-     - ../environment-react
+    - environment-core
+    - environment-nodejs
+    - .
