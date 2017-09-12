@@ -15,7 +15,10 @@
       npm: name={{ item.name }} version={{ item.version }} global=yes
       become: yes
       with_items:
+      - {name: yarn, version: 1.0.1}
       - {name: create-react-app, version: 1.4.0}
+      - {name: react, version: 15.6.1}
+      - {name: react-dom, version: 15.6.1}
       tags:
       - react
       - development
